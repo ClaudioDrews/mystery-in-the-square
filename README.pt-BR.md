@@ -1,42 +1,38 @@
 <p align="center"><img src="docs/banner.jpg" alt="Mistério na Praça" width="100%"></p>
 
-# Mistério na Praça — Mystery in the Square
+# Mistério na Praça
 
-[English](README.md) · [Jogar em português](index.html#pt-BR) · [Play in English](index.html#en)
+[English](README.md) · **[Jogar em português](https://claudiodrews.github.io/mystery-in-the-square/#pt-BR)** · [Play in English](https://claudiodrews.github.io/mystery-in-the-square/#en)
 
-Um jogo investigativo procedural ambientado na Praça Coronel Pedro Osório, em Pelotas, Rio Grande do Sul, Brasil. Investigue um crime em uma praça que perde a iluminação progressivamente. Interrogue testemunhas, compare depoimentos, recolha pistas físicas e decida quem acusar antes do apagão completo.
+Cai a noite na Praça Coronel Pedro Osório, em Pelotas, no Rio Grande do Sul. Há um crime a desvendar, e os postes da praça estão se apagando um a um.
 
-O jogo utiliza uma interface inspirada em terminais de fósforo verde, mapa com emojis e controles táteis para celulares em orientação retrato. Cláudio, Christopher, Lu, Seu Bento, Fiscal, Dona Tereza, Guri do Mate e Leitor preservam suas identidades e o cenário original nas duas línguas.
+Assuma o papel de Cláudio, investigue com seu cachorro Christopher e discuta suas descobertas com Lu. Interrogue suspeitos, compare versões contraditórias e reúna pistas antes que a praça mergulhe na escuridão.
 
-Os diálogos em português brasileiro empregam intencionalmente gírias e expressões regionais de Pelotas e do sul do Brasil, como *bah*, *guri* e o uso coloquial de *tu*. A edição em inglês adapta os diálogos, preservando os personagens e a ambientação brasileira.
+## Características
 
-## Cenário e personagens ficcionalizados
-
-Embora o jogo se passe na cidade real de Pelotas, no Brasil, e incorpore pontos de referência locais, elementos culturais e aspectos inspirados na vida cotidiana, seus personagens são ficcionalizados. Todos os crimes, investigações, motivos, acusações e desfechos são fictícios e não devem ser interpretados como afirmações sobre pessoas ou acontecimentos reais.
+- Mistérios gerados proceduralmente a partir de seis histórias originais.
+- Personagens com personalidades distintas, memória e dinâmica social.
+- Coleta de pistas, interrogatórios e quadro de deduções.
+- Modos Normal e Avançado, apagão progressivo e gerenciamento de recursos.
+- Conversas, novos mistérios e epílogos com IA opcional.
+- Estética retrô de terminal verde, mapa com emojis e controles táteis para celular.
+- Português e inglês. Os diálogos em português incluem gírias e expressões regionais de Pelotas.
 
 ## Como jogar
 
-Abra `index.html` em um navegador moderno ou sirva o repositório por HTTP. Escolha português ou inglês na tela inicial. Também é possível selecionar a língua com `#pt-BR` ou `#en` no endereço. O português é o padrão. Alterar o idioma durante uma partida inicia outra após confirmação.
+Explore a praça, converse com os personagens próximos, use Christopher para farejar pistas e consulte o diário. Discuta suas hipóteses com Lu e acuse um suspeito quando estiver pronto.
 
-- Escolha o modo Normal ou Avançado, ou um caso da biblioteca de mistérios.
-- Use o joystick circular para andar; examine locais e converse com os personagens próximos.
-- Use Christopher para investigar odores e consulte Lu sobre suas anotações.
-- Administre tempo, energia e sanidade. Compare depoimentos e evidências físicas no diário ou faça uma acusação direta.
-- As seis histórias originais e a geração determinística funcionam sem um serviço de IA.
+É possível jogar sem chave de API. Para jogar localmente, baixe o repositório e abra `index.html` no navegador.
 
-## Inferência opcional com IA
+## IA opcional
 
-O OpenRouter pode ser usado para diálogos livres, interação social, conversas entre NPCs, geração de casos e epílogos. Abra a configuração de IA, informe sua própria chave de API e escolha o modelo. O identificador padrão é `openrouter/free`; sua disponibilidade e seus limites dependem do provedor. A investigação convencional e as respostas locais funcionam sem chave.
+Abra a **Configuração de IA**, informe sua chave de API do [OpenRouter](https://openrouter.ai/) e escolha um modelo. A IA permite conversas mais livres e a criação de novas histórias para a biblioteca de mistérios. Os fatos e as pistas de cada caso são definidos pelo motor do jogo.
 
-A verdade do caso, o culpado, as pistas e os depoimentos canônicos são definidos pelo motor do jogo, não pelo modelo de linguagem. As propostas do modelo são verificadas antes de serem usadas. Filtros lexicais não garantem a ausência de insinuações enganosas.
-
-As requisições vão diretamente do navegador ao OpenRouter. A chave fica no localStorage do navegador, não embutida no jogo. Use uma chave temporária e limitada; nunca publique credenciais. Quando a inferência estiver ativa, perguntas livres e contexto relevante do jogo, incluindo memória recente de conversas, são enviados ao provedor. Não informe dados pessoais ou confidenciais. O uso de modelos está sujeito aos termos e preços do provedor.
-
-Casos gerados são armazenados localmente por idioma e podem ser exportados em backup. São criados na língua selecionada, sem tradução automática para a outra língua. Backups podem conter spoilers.
+A chave fica armazenada no navegador. As requisições de IA enviam diálogos e contexto relevante do jogo ao OpenRouter; evite inserir informações sensíveis. O uso dos modelos pode gerar custos.
 
 ## Desenvolvimento
 
-Node.js 20 ou superior, sem dependências npm. O HTML gerado pode ser jogado sem Node.js.
+Node.js 20 ou superior, sem dependências npm.
 
 ```sh
 npm test
@@ -44,32 +40,12 @@ npm run build
 python3 -m http.server 8000
 ```
 
-Abra `http://localhost:8000/#pt-BR` ou `http://localhost:8000/#en`.
+Consulte as [notas de desenvolvimento](docs/DEVELOPMENT.md) para informações sobre arquitetura, localização e testes.
 
-```text
-src/
-  engine.js          Mundo procedural, evidências e solvers
-  game.js            Mecânicas, sistemas sociais e estratégicos
-  ui.js              Interface, persistência e integração com IA
-  localization.js    Carregamento e formatação de idiomas
-  layout.html        Estrutura da interface
-  style.css          Identidade visual
-locales/
-  en.json            Textos e regras linguísticas em inglês
-  pt-BR.json         Textos e regras linguísticas em português
-scripts/build.js     Gerador do HTML autocontido
-tests/               Testes de regressão e localização
-index.html           Versão jogável autocontida gerada
-```
+## Cenário ficcional
 
-Use inglês nos identificadores, comentários e protocolos internos. Mantenha os textos destinados ao jogador e as regras específicas de idioma nos catálogos. Nomes próprios e IDs legados estáveis são preservados. Ao adicionar mensagens ou modificar parâmetros de interpolação, atualize ambos os catálogos. Não edite `index.html` diretamente: regenere-o e inclua-o no commit junto com o código-fonte.
+O jogo se passa em uma cidade real, mas seus personagens são ficcionalizados. Todos os crimes, investigações, motivos, acusações e desfechos são fictícios e não devem ser interpretados como afirmações sobre pessoas ou acontecimentos reais.
 
-Os testes verificam 120 snapshots originais do teste 15, equivalência entre idiomas dos mundos gerados e rotas verificadas, as seis histórias originais, exemplos de casos gerados, diálogos locais e validadores de respostas do modelo. São testes automatizados offline, não uma garantia de qualidade da inferência ou de funcionamento em todos os dispositivos. Consulte as [notas de desenvolvimento](docs/DEVELOPMENT.md).
+## Licença
 
-## GitHub Pages
-
-Inclua os arquivos do repositório, inclusive `index.html`, na branch `main`. No GitHub, abra **Settings → Pages → Build and deployment**, selecione **Deploy from a branch**, escolha `main` e `/(root)`. Após a publicação, acrescente `#pt-BR` ou `#en` à URL. O workflow de CI executa os testes e verifica a correspondência entre o HTML gerado e os fontes.
-
-## Estado e licença
-
-A versão 0.16.0 é uma base bilíngue de desenvolvimento derivada do protótipo teste 15, já avaliado por jogadores. As mecânicas e a geração procedural foram preservadas intencionalmente, em vez de redesenhadas. O projeto está licenciado sob a licença MIT; consulte o arquivo [LICENSE](LICENSE).
+[MIT](LICENSE)
