@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/banner.jpg" alt="Mystery in the Square" width="100%"></p>
+
 # Mystery in the Square — Mistério na Praça
 
 [Português (Brasil)](README.pt-BR.md) · [Play in English](index.html#en) · [Jogar em português](index.html#pt-BR)
