@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="{{language}}">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" name="viewport"/>
+<meta content="#000000" name="theme-color"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<title>{{layout.mystery_in_the_square_0}}</title>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style id="style-placeholder"></style>
+</head>
+<body>
+<div id="app">
+<div id="hud"><div class="l" id="hudText"></div><div style="display:flex;flex-direction:column;gap:4px"><button aria-label="{{layout.menu_58}}" id="menuBtn">≡</button><button aria-label="{{layout.toggle_map_zoom_59}}" id="zoomBtn">⤢</button></div></div>
+<div id="mapwrap"><div aria-label="{{layout.map_of_the_square_with_emoji_characters_60}}" id="map" role="img"></div></div>
+<div id="bottom">
+<div aria-live="polite" id="log"></div>
+<div id="dlg">
+<div id="dlgHead"><pre id="portrait"></pre><div class="whoBlock"><div id="dlgWho"></div><div id="dlgRole"></div></div><button hidden="" id="bAccuse" type="button">{{layout.accuse_1}}</button></div>
+<div id="dlgText"></div>
+<div id="dlgOpts"></div>
+</div>
+<div id="controls">
+<div aria-label="{{layout.joystick_drag_the_circle_to_move_61}}" id="pad" role="application" tabindex="0"><span class="dir up">▲</span><span class="dir left">◀</span><span class="dir right">▶</span><span class="dir down">▼</span><div id="stick"></div></div>
+<div id="acts">
+<button id="bA">{{layout.examine_2}}</button>
+<button id="bDog">{{layout.dog_3}}<br/><span class="note">{{layout.sniff_4}}</span></button>
+<button id="bItems">{{layout.items_5}}</button>
+<button id="bDiary">{{layout.diary_6}}</button><button aria-label="{{layout.wait_one_minute_62}}" id="bWait">{{layout.wait_7}}</button><button id="bDirectMap">{{layout.accuse_now_8}}</button>
+</div>
+</div>
+</div>
+
+<div class="ov on" id="ovIntro">
+<div id="title"></div>
+<div class="body" id="introText"></div>
+<div class="foot" style="flex-direction:column"><nav aria-label="Language / Idioma" class="language-switch"><a data-language="pt-BR" href="#pt-BR">Português</a><a data-language="en" href="#en">English</a></nav>
+<div class="chips" id="modeChips" style="justify-content:center">
+<button class="on" data-m="mvp">{{layout.normal_mode_9}}</button><button data-m="advanced">{{layout.advanced_mode_10}}</button>
+</div>
+<button id="bLibrary">{{layout.mystery_library_11}}</button>
+<div style="display:flex;gap:6px"><button id="bStart" style="border-color:var(--g3);color:var(--g3)">{{layout.start_12}}</button><button id="bCfg1">{{layout.ai_config_13}}</button></div>
+</div>
+</div>
+
+<div class="ov" id="ovDiary">
+<div class="tabs" id="dTabs"><button class="on" data-t="facts">{{layout.facts_14}}</button><button data-t="clues">{{layout.clues_15}}</button><button data-t="board">{{layout.board_16}}</button><button data-t="case">{{layout.case_17}}</button></div>
+<div class="body" id="dBody"></div>
+<div class="foot" id="dFoot"><button id="dClose">{{layout.close_diary_18}}</button><button hidden="" id="bClose">{{layout.validate_accusation_19}}</button><button hidden="" id="bGoConfront">{{layout.confront_now_20}}</button><button id="bDirectDiary">{{layout.accuse_now_8}}</button></div>
+</div>
+
+<div class="ov" id="ovItems">
+<h2>{{layout.inventory_21}}</h2>
+<div class="body" id="iBody"></div>
+<div class="foot"><button id="iClose">{{layout.back_22}}</button><button id="bDirectItems">{{layout.accuse_now_8}}</button></div>
+</div>
+
+<div class="ov" id="ovCfg">
+<h2>{{layout.menu_23}}</h2>
+<div class="body"><nav aria-label="Language / Idioma" class="language-switch"><a data-language="pt-BR" href="#pt-BR">Português</a><a data-language="en" href="#en">English</a></nav>
+<p><b>{{layout.artificial_intelligence_openrouter_24}}</b><br/><span class="note">{{layout.free_conversation_uses_ai_for_social_interpretat_25}}</span></p>
+<label>{{layout.api_key_26}}<br/><input autocomplete="off" id="cKey" placeholder="{{layout.sk_or_v1_63}}" type="password"/></label>
+<label style="display:block;margin-top:8px">{{layout.model_27}}<br/><input autocomplete="off" id="cModel" type="text" value="openrouter/free"/></label>
+<div class="foot" style="padding-top:8px"><button id="cSave">{{layout.save_28}}</button><button id="cTest">{{layout.test_29}}</button><button id="cClear">{{layout.delete_key_30}}</button></div>
+<p class="note" id="cStatus"></p>
+<p class="note">{{layout.the_key_is_stored_in_this_browser_localstorage_u_31}}</p><p class="note">{{layout.ai_receives_your_question_recent_memory_and_the__32}}</p>
+<hr style="border:0;border-top:1px solid var(--g0)"/>
+<p><b>{{layout.game_33}}</b></p><button id="bLibraryCfg" style="width:100%">{{layout.library_new_mystery_34}}</button>
+<label>{{layout.seed_35}}<br/><input id="cSeed" inputmode="numeric" type="text"/></label>
+<div class="foot" style="padding-top:8px"><button id="cNew">{{layout.new_game_seed_36}}</button><button id="cRand">{{layout.new_random_game_37}}</button></div>
+<hr style="border:0;border-top:1px solid var(--g0)"/>
+<div class="legend" id="legend"></div>
+</div>
+<div class="foot"><button id="cClose">{{layout.return_to_game_38}}</button><button id="bDirectCfg">{{layout.accuse_now_8}}</button></div>
+</div>
+
+<div aria-labelledby="accuseTitle" aria-modal="true" class="ov" id="ovAccuse" role="dialog">
+<h2 id="accuseTitle">{{layout.direct_accusation_39}}</h2>
+<div class="body">
+<p>{{layout.who_is_the_killer_you_can_accuse_any_suspect_eve_40}}</p>
+<div id="directSuspects"></div>
+<p id="accuseWarning">{{layout.select_a_suspect_a_correct_accusation_wins_the_f_41}}</p>
+<button id="bAccuseBoard">{{layout.view_deduction_board_optional_42}}</button>
+</div>
+<div class="foot"><button id="bCancelAccuse">{{layout.cancel_43}}</button><button disabled="" id="bConfirmAccuse">{{layout.confirm_accusation_44}}</button></div>
+</div>
+<div aria-labelledby="libTitle" aria-modal="true" class="ov" id="ovLibrary" role="dialog">
+<h2 id="libTitle">{{layout.mystery_library_11}}</h2>
+<div class="body">
+<p class="note">{{layout.generate_a_new_story_with_ai_or_select_an_existi_45}}</p>
+<button id="libGenerate" style="width:100%;min-height:46px;color:var(--g3);border-color:var(--g2)">{{layout.generate_new_case_with_ai_46}}</button>
+<button hidden="" id="libCancel" style="width:100%;min-height:40px;margin-top:5px">{{layout.cancel_generation_47}}</button>
+<div class="aTools"><button id="libExport">{{layout.export_backup_48}}</button><button id="libImport">{{layout.import_backup_49}}</button></div><input accept="application/json,.json" hidden="" id="libFile" type="file"/><p class="note">{{layout.backups_contain_private_case_information_keep_th_50}}</p><p id="libStatus" role="status"></p><div id="libList"></div>
+</div>
+<div class="foot"><button id="libClose">{{layout.back_22}}</button><button id="libRandom">{{layout.play_random_case_51}}</button></div>
+</div>
+
+<div class="ov" id="ovEnd">
+<h2 id="eTitle"></h2>
+<div class="body res" id="eBody"></div>
+<div class="foot"><button id="eEpilogue">{{layout.ai_epilogue_52}}</button><button id="bLibraryEnd">{{layout.library_53}}</button><button id="eSame">{{layout.same_seed_54}}</button><button id="eNew">{{layout.new_game_55}}</button></div>
+</div>
+</div>
+<div id="rot">{{layout.rotate_your_device_56}}<br/>{{layout.this_terminal_works_in_portrait_mode_only_57}}</div>
+</body></html>
