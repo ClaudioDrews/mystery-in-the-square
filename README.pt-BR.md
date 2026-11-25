@@ -1,51 +1,65 @@
-<p align="center"><img src="docs/banner.jpg" alt="Mistério na Praça" width="100%"></p>
-
 # Mistério na Praça
 
-[English](README.md) · **[Jogar em português](https://claudiodrews.github.io/mystery-in-the-square/#pt-BR)** · [Play in English](https://claudiodrews.github.io/mystery-in-the-square/#en)
+![Mistério na Praça](docs/banner.jpg)
 
-Cai a noite na Praça Coronel Pedro Osório, em Pelotas, no Rio Grande do Sul. Há um crime a desvendar, e os postes da praça estão se apagando um a um.
+**[Jogar em português](https://claudiodrews.github.io/mystery-in-the-square/#pt-BR)** · [Play in English](https://claudiodrews.github.io/mystery-in-the-square/#en) · [English](README.md)
 
-Assuma o papel de Cláudio, investigue com seu cachorro Christopher e discuta suas descobertas com Lu. Interrogue suspeitos, compare versões contraditórias e reúna pistas antes que a praça mergulhe na escuridão.
+Cai a noite na Praça Coronel Pedro Osório, em Pelotas, no sul do Brasil. Há um crime a desvendar, e os postes estão se apagando um a um.
 
-## Características
+**Quando o último poste se apaga, o mistério fica sem solução.**
+
+## A praça está ficando escura
+
+Você é Cláudio. Ao seu lado estão Christopher, seu cachorro, que fareja o que ninguém mais percebe, e Lu, que te avisa quando você está se enganando.
+
+Interrogue os suspeitos, junte as peças de histórias contraditórias e recolha evidências antes que a praça mergulhe na escuridão. Cada minuto conta, os depoimentos podem se contradizer e uma acusação errada pode custar caro.
+
+## Como uma investigação se desenrola
+
+- **Explore a praça.** Converse com quem estiver por perto, examine os arredores e escute as conversas dos personagens.
+- **Siga Christopher.** Deixe que ele fareje pistas escondidas e odores que passam despercebidos aos olhos.
+- **Interrogue.** Os suspeitos se lembram, se contradizem, omitem informações e escondem motivações.
+- **Monte seu caso.** Recolha evidências e organize-as no quadro de deduções.
+- **Acuse antes do apagão.** Consulte Lu quando precisar de outra perspectiva e faça sua acusação quando estiver pronto. Se demorar demais, a escuridão decide por você.
+
+## Cada partida, um novo mistério
 
 - Mistérios gerados proceduralmente a partir de seis histórias originais.
-- Personagens com personalidades distintas, memória e dinâmica social.
-- Coleta de pistas, interrogatórios e quadro de deduções.
-- Modos Normal e Avançado, apagão progressivo e gerenciamento de recursos.
-- Conversas, novos mistérios e epílogos com IA opcional.
-- Estética retrô de terminal verde, mapa com emojis e controles táteis para celular.
-- Português e inglês. Os diálogos em português incluem gírias e expressões regionais de Pelotas.
+- Personagens com personalidades, memórias e dinâmicas sociais próprias. O que contam depende do que viram, em quem confiam e do que querem esconder.
+- Modos Normal e Avançado, apagões progressivos e gerenciamento de recursos. Quanto mais a investigação avança, menos luz e tempo restam.
+- Estética retrô de terminal verde, mapa com emojis e controles táteis para celulares.
+- Inglês e português brasileiro. Os diálogos em português trazem gírias e expressões regionais de Pelotas.
 
-## Como jogar
+<p align="center"><img src="docs/gameplay.gif" alt="Jogabilidade de Mistério na Praça" width="360"></p>
 
-Explore a praça, converse com os personagens próximos, use Christopher para farejar pistas e consulte o diário. Discuta suas hipóteses com Lu e acuse um suspeito quando estiver pronto.
+## Jogue agora
 
-É possível jogar sem chave de API. Para jogar localmente, baixe o repositório e abra `index.html` no navegador.
+**Sem instalação. Sem conta. Sem precisar de chave de API.**
+
+[Abra o jogo no navegador](https://claudiodrews.github.io/mystery-in-the-square/#pt-BR) e comece sua primeira investigação. Você também pode [baixar o repositório](https://github.com/ClaudioDrews/mystery-in-the-square/archive/refs/heads/main.zip), extrair os arquivos e abrir `index.html` para jogar localmente.
 
 ## IA opcional
 
-Abra a **Configuração de IA**, informe sua chave de API do [OpenRouter](https://openrouter.ai/) e escolha um modelo. A IA permite conversas mais livres e a criação de novas histórias para a biblioteca de mistérios. Os fatos e as pistas de cada caso são definidos pelo motor do jogo.
+Quer diálogos mais livres, novos mistérios para sua biblioteca e epílogos? Abra a configuração de IA, informe sua chave de API do [OpenRouter](https://openrouter.ai/) e escolha um modelo.
 
-A chave fica armazenada no navegador. As requisições de IA enviam diálogos e contexto relevante do jogo ao OpenRouter; evite inserir informações sensíveis. O uso dos modelos pode gerar custos.
+O motor do jogo determina os fatos, as evidências e a solução de cada caso, independentemente do modelo de linguagem.
 
-## Desenvolvimento
-
-Node.js 20 ou superior, sem dependências npm.
-
-```sh
-npm test
-npm run build
-python3 -m http.server 8000
-```
-
-Consulte as [notas de desenvolvimento](docs/DEVELOPMENT.md) para informações sobre arquitetura, localização e testes.
+A chave fica no armazenamento local do navegador. As requisições de IA enviam os diálogos e o contexto relevante do jogo ao OpenRouter. Evite informar dados sensíveis. O uso de modelos pode gerar custos.
 
 ## Cenário ficcional
 
 O jogo se passa em uma cidade real, mas seus personagens são ficcionalizados. Todos os crimes, investigações, motivos, acusações e desfechos são fictícios e não devem ser interpretados como afirmações sobre pessoas ou acontecimentos reais.
 
-## Licença
+## Licença MIT: aberto por princípio
 
-[MIT](LICENSE)
+Este jogo utiliza a [licença MIT](LICENSE). É uma escolha deliberada.
+
+Você pode fazer um fork, estudar o código, modificá-lo e construir seus próprios projetos a partir dele. As principais mecânicas já foram testadas em um jogo funcional: geração procedural de mistérios, interrogatórios com memória e dinâmicas sociais, evidências e quadro de deduções, apagões progressivos, gerenciamento de recursos e IA opcional para diálogos e novas histórias.
+
+Se você está criando seu próprio jogo de mistério, investigação ou narrativa, não precisa começar do zero. Explore como esses sistemas funcionam, reaproveite-os, combine-os de novas maneiras e contribua com novos cenários, traduções, mecânicas ou melhorias.
+
+**Aberto para jogar, aprender e criar.**
+
+## Para desenvolvedores
+
+Quer contribuir, executar os testes ou rodar o jogo localmente? Consulte as [notas de desenvolvimento](docs/DEVELOPMENT.md).
